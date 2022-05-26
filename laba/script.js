@@ -1,12 +1,13 @@
 function f(t) {
-	return Math.sin(t);
+//	return Math.sin(t);
+	return Math.sin(3*t)/(1+t);
 }
 
 function spectr_graph(f,D,m) {
 	var points_Re = [];
 	var points_Im = [];
 	var delta_omega = 0.001;
-	for(var omega = 0; omega<=m; omega+=delta_omega) {
+	for(var omega = -m; omega<=m; omega+=delta_omega) {
 		points_Re.push(new Point(omega,F(f,omega,D,'Re')));
 		points_Im.push(new Point(omega,F(f,omega,D,'Im')));
 	}
@@ -28,7 +29,6 @@ function F(f,omega,D,part) {
 			s += f(t)*Math.sin(2*Math.PI*omega*t)+
 				f(t+h)*Math.sin(2*Math.PI*omega*(t+h));
 		}
-		t += h;
 	}
 	return s*h/2;
 }
@@ -39,12 +39,13 @@ var D = {
 	n: 1000
 };
 
-var m = 2;
+var m = 0.22;
 
-var points = spectr_graph(f,D,m);
+//var points = spectr_graph(f,D,m);
+var points = make_points(-0.22,0.22);
 
 var svg = new SVG(1000, 1000)
-var oxy = new OXY(svg, 5, 30, 2, 'w', 'F', 4);
+var oxy = new OXY(svg, 1.5, 30, 2, 'w', 'F', 4);
 svg.Create();
 oxy.Draw(svg);
 
