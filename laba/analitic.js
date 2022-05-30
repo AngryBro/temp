@@ -5,7 +5,7 @@
 function Si(x) {
     var one = 1;
     var res = 0;
-    for(var n = 0; n<=20; n++) {
+    for(var n = 0; n<=50; n++) {
   
         var k = 2*n+1;  // дабы в следующей строке 3 раза не вычислять
          
@@ -25,7 +25,7 @@ function Si(x) {
 function Ci(x) {
     var one = -1;
     var res = Math.log(x)+0.5772157;
-    for(var n = 1; n<=20; n++) {
+    for(var n = 1; n<=50; n++) {
   
         var k = 2*n;  // дабы в следующей строке 3 раза не вычислять
          

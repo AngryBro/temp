@@ -39,13 +39,13 @@ var D = {
 	n: 1000
 };
 
-var m = 0.22;
+var m = 0.47;
 
-//var points = spectr_graph(f,D,m);
-var points = make_points(-0.22,0.22);
+var points = spectr_graph(f,D,m);
+//var points = make_points(-m,m);
 
 var svg = new SVG(1000, 1000)
-var oxy = new OXY(svg, 1.5, 30, 2, 'w', 'F', 4);
+var oxy = new OXY(svg, 3, 30, 2, 'w', 'F', 4);
 svg.Create();
 oxy.Draw(svg);
 
